@@ -10,12 +10,12 @@ app.use(express.static(path.join(__dirname + '/public')))
 io.on('connection', socket => {
   console.log('Some client connected')
   
-  socket.on('chat', message => {
-    console.log('From client: ', message)
-    io.emit('chat', message)
+  socket.on('chat', message2 => {
+    console.log('From client: ', message2)
+    io.emit('chat', message2)
+    
   })
-  
-
+ 
 })
 
 server.listen(port, () => {
